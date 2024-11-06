@@ -19,12 +19,12 @@ app.use('/product',productRoutes)
 app.use('/uploads',express.static('uploads'))
 
 
-app.use('/home', (req, res) => {
+app.use('/', (req, res) => {
     res.send('Welcome to food');
 });
 
 // Start the server
-const port = 4040;
+const port = process.env.port || 4040;
 app.listen(port, () => {
     console.log(`Server started and running at port ${port}`);
 });
